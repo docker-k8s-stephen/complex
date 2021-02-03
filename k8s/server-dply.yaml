@@ -31,7 +31,10 @@ spec:
             - name: PGPORT
               value: "5432"
             - name: PGPASSWORD
-              value: postgres
+              valueFrom:
+                secretKeyRef:
+                  name: pgpassword
+                  key: PGPASSWORD
 
 ---
 apiVersion: v1
